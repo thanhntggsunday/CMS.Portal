@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+
+@{
+
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+
+@section slide
+{
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="/Asset/eLearning/Client/Libraries/img/breadcrumb.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Organi Shop</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/">Home</a>
+                            <span>Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+}
+
+<h4>
+
+    <b>
+        Giới thiệu về Education Center
+    </b>
+</h4>
+
+<br />
+
+<div>
+
+    <textarea name="Content" class="" id="Content" placeholder=""></textarea>
+
+    <script language="JavaScript">
+        var value = $("#Content").val();
+        document.write(value);
+
+    </script>
+
+
+</div>
+
+@section Scripts{
+
+    <script src="~/Asset/eLearning/Client/Scripts/about.js"></script>
+}

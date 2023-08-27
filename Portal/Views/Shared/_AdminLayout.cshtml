@@ -1,0 +1,180 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+
+    @Styles.Render("~/Content/CommonAdminCss")
+
+    @Scripts.Render("~/bundles/CommonAdminJQuery")
+    @*@Scripts.Render("~/bundles/ckjs")*@
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckfinder/ckfinder.js"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+    <div class="wrapper">
+        <div class="ui-modal" style="display: none">
+            <div class="center">
+
+                <img src="~/Content/images/ajax-loading-c7.gif" />
+            </div>
+        </div>
+
+        <div class="modal" style="display: none"><!-- Place at bottom of page --></div>
+
+        <header class="main-header" style="z-index:1">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>LT</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Admin</b>LTE</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="~/Asset/Common/Admin/Libraries/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                @Html.Partial("_AdminLoginPartial")
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <div>
+                                        <div class="col-md-3">
+                                            <img src="~/Asset/Common/Admin/Libraries/dist/img/user2-160x160.jpg" width="60" height="60" class="img-circle" alt="User Image" style="float: left">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="col-md-6" style="float: none">
+                                                <br />
+                                                @Html.Partial("_AdminLoginPartial")
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="/Manage" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <form id="logoutForm" method="post" action="@Url.Action("LogOff", "Account")">
+                                            <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-default btn-flat">Sign out</a>
+                                        </form>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar" style="z-index:1">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <ul class="sidebar-menu" data-widget="tree">
+                    @*<li class="header">MAIN NAVIGATION</li>*@
+                    <li class="">
+                        <a href="/CmaHome">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            @*<span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>*@
+                        </a>
+
+                    </li>
+
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-fw fa-tv"></i> <span>System Management</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/CmaRole"><i class="fa fa-circle-o"></i> Role </a></li>
+                            <li><a href="/CmaUser"><i class="fa fa-circle-o"></i> User </a></li>
+                            <li><a href="/CmaUserRole"><i class="fa fa-circle-o"></i>User-Role </a></li>
+                            <li><a href="/CmaPermission"><i class="fa fa-circle-o"></i>Permission </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-fw fa-tv"></i> <span>e-Learning Management</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/ElaHome/About"><i class="fa fa-circle-o"></i>About</a></li>
+                            <li class="active"><a href="/ElaContentCategory"><i class="fa fa-circle-o"></i>Post Category</a></li>
+                            <li class="active"><a href="/ElaContent"><i class="fa fa-circle-o"></i>Post</a></li>
+                            <li class="active"><a href="/ElaLayout"><i class="fa fa-circle-o"></i>Footer</a></li>
+                            <li class="active"><a href="/ElaSlide"><i class="fa fa-circle-o"></i>Slide Images</a></li>
+                            <li class="active"><a href="/ElaCourseCategory"><i class="fa fa-circle-o"></i>Course Category</a></li>
+                            <li class="active"><a href="/ElaCourse"><i class="fa fa-circle-o"></i>Courses</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+
+        @RenderBody()
+
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Copyright &copy; </strong> All rights reserved.
+        </footer>
+
+
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+            //$.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script src="/Asset/Common/Cmm/_common.js"></script>
+    <script> sessionStart = '@ViewBag.Session' </script>
+
+    @Scripts.Render("~/bundles/CommonAdminBootstrapJs")
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,103 @@
+﻿@using eLearning.Common.Dto
+@model Common.ViewModel.Common.ApiResult<CourseCategoryDto>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Post-Category Management
+            @*<small>Control panel</small>*@
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"> COURSE-CATEGORY </li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="container-fluid">
+            <div class="row">
+                <div id="div-btn-add-course-cate" class="col-sm-12 col-md-1 col-lg-1" float-left
+                     style="padding-bottom: 20px;float: right; display:flex; justify-content:flex-end;">
+                    <button type="button" id="btnAddCourseCategory" class="btn w-100 btn-info" style="float: right;">
+                        <i class="fa fa-fw fa-plus"></i>
+                        <b>Create</b>
+                    </button>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <!-- /.box -->
+
+                    <div class="box">
+                        @*<div class="box-header">
+                                <h3 class="box-title">Data Table With Full Features</h3>
+                            </div>*@
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="tbl_categories" class="table table-bordered table-striped"></table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+
+
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        <!-- /.row -->
+        <!-- Main row -->
+        <!-- /.row (main row) -->
+
+
+        <form class="categoryForm" id="categoryForm" style="display: none">
+            <input type="text" name="id" disabled class="form-control d-none hidden" id="id">
+            <label value="000" id="edit-flag"></label>
+
+            <div class="form-group">
+                <label>Name:</label><br>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Name" required="required">
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Status:</label>&nbsp;&nbsp;
+
+                <input id="status" type="checkbox" value="true" name="status" /> &nbsp;
+                <label>Is active</label>
+            </div>
+
+
+
+        </form>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+@section Scripts{
+
+    <script src="~/Asset/eLearning/Admin/Scripts/course_category.js"></script>
+}
+
+

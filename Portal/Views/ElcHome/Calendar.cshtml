@@ -1,0 +1,36 @@
+﻿@model Common.ViewModel.Common.ApiResult<Common.DTO.DTO.AboutDto>
+@{
+
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>Lịch khai giảng</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            @Html.TextAreaFor(model => model.ResultObj.Calendar, htmlAttributes: new { id = "Calendar" })
+        </dd>
+
+        <script language="JavaScript">
+            var value = jQuery("#Calendar").val();
+            jQuery("#Calendar").remove();
+            document.write(value);
+
+        </script>
+
+
+
+    </dl>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/ckjs")
+}

@@ -1,0 +1,186 @@
+﻿@model Common.ViewModel.System.Permission.PermissionViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Asset/Common/Admin/Libraries/Drop-Down-Combo-Tree/style.css" rel="stylesheet" />
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Permission Manage
+            @*<small>Control panel</small>*@
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Permission</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div id="div-btn-add-emp" class="col-sm-12 col-md-1 col-lg-1" float-left
+                     style="padding-bottom: 20px;float: right; display:flex; justify-content:flex-end;">
+                    <button type="button" id="btnAssignPermission" class="btn w-100 btn-info" style="float: right;"
+                            data-toggle="modal"
+                            data-target="#modal-lg-assign-role">
+
+                        <i class="fa fa-fw fa-plus"></i>
+                        <b>Assign</b>
+                    </button>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <!-- /.box -->
+
+                    <div class="box">
+
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="tbl_permission" class="table table-bordered table-striped">
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        <!-- /.container-fluid -->
+        <!-- /.row -->
+        <!-- Main row -->
+        <!-- /.row (main row) -->
+
+
+
+
+        <form class="" id="formPermission" action="" novalidate style="display: none">
+
+            <div class="">
+                <!-- <p>One fine body&hellip;</p> -->
+                <label value="000" id="edit-flag"></label>
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="col-md-12">
+
+
+                                    <div class="form-group">
+                                        <label>
+                                            Roles
+                                        </label>
+
+                                        <div class="row">
+
+                                            <div class="col-lg-12" id="div-members">
+
+                                                <input type="text" id="roles-id" class="col-md-12" placeholder="Select" />
+                                            </div>
+
+                                            <!-- </div> -->
+                                            <div class="col-md-12">
+                                                <span id="msg-role"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>
+                                            Function
+                                        </label>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <select id="ddlFunctions"></select>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <span id="msg-function"></span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12">
+
+                                    <!-- /.form-group -->
+                                    <div class="form-group">
+                                        <label>
+                                            Action
+                                        </label>
+
+                                        <div class="row">
+
+
+                                            <div class="col-sm-12">
+
+                                                <!-- <div id="roles"></div> -->
+
+                                                <table id="level-permission-assign" style="width:100%"></table>
+                                                <span id="msg-levelper"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+            <!-- /.tab-content -->
+            <!-- /.card-body -->
+        </form>
+
+
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<!-- Modal -->
+
+
+@section Scripts{
+
+    <script src="~/Asset/Common/Admin/Libraries/Drop-Down-Combo-Tree/icontains.js"></script>
+    <script src="~/Asset/Common/Admin/Libraries/Drop-Down-Combo-Tree/comboTreePlugin.js"></script>
+    <script src="~/Asset/Common/Admin/Script/Permission.js"></script>
+    <script src="~/Asset/Common/Admin/Script/permission_assign.js"></script>
+
+}
+
+
+

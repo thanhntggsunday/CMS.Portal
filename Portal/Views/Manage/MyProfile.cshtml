@@ -1,0 +1,195 @@
+﻿@model Common.ViewModel.System.AppUserViewModel
+
+@{
+    ViewBag.Title = "My Profile";
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="">
+
+    <section class="service py-lg-4 py-md-3 py-sm-3 py-3" id="acc">
+        <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3"></h3>
+            <div class="row">
+                <!-- Main content -->
+                <section class="content col-md-12">
+                    <!-- Small boxes (Stat box) -->
+
+                    <div class="">
+
+                        <div class="">
+                            <div class="box">
+                                <div class="box-body ">
+                                    <h4 class="login-box-msg"><b>My Profile.</b> </h4>
+                                    <div class="">
+                                        <label data-value-id="@Model.Id.ToString()" id="user-id" class="d-none hidden"></label>
+
+                                        <div class="col-md-12">
+
+                                            <form>
+                                                <div class="form-group col-md-12">
+                                                    <div class="col-md-2">
+                                                        <label>Avatar:</label><br>
+                                                        <img src="@Model.Avatar" id="Picture" height="50" width="50" />
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <br />
+                                                        <br />
+                                                        <input type="file" id="Browse" name="Browse" multiple="multiple" />
+
+                                                        <input type="text" name="Avatar" class="form-control d-none hidden" id="avatar" value="@Model.Avatar">
+                                                        <br />
+                                                    </div>
+                                                    
+                                                    <div class="clearfix">
+                                                        <br />
+                                                    </div>
+                                                    <br />
+
+                                                    <div class="col-md-12">
+                                                        <button type="button" id="saveImg" class="btn btn-info">Save Image</button>
+                                                    </div>
+                                                </div>
+
+                                               
+                                            </form>
+
+                                            <div class="clearfix">
+                                                <br />
+                                            </div>
+
+                                            <hr />
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="clearfix">
+                                                <br />
+                                            </div>
+                                            <br />
+
+                                            <form class="userform">
+                                                <input type="text" name="id" disabled class="form-control d-none hidden" id="id">
+                                                <span id="msg-error"></span>
+
+                                                <div class="form-group">
+                                                    <label>Email:</label><br>
+                                                    <input type="text" name="email" class="form-control" id="email" placeholder="Email" required="required">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Full name:</label><br>
+                                                    <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Full name" required="required">
+                                                </div>
+
+                                                @*<div class="form-group">
+                                                        <label>Password:</label><br>
+                                                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                                                    </div>*@
+
+                                                <div class="form-group">
+                                                    <label>Address:</label><br>
+                                                    <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+                                                </div>
+
+                                                <div class="clearfix">
+                                                    <br />
+                                                </div>
+                                                <br />
+
+                                                <div class="form-group">
+                                                    <label>BirthDay:</label><br>
+                                                    <input type="date" name="birth_day" class="form-control" id="birth_day" placeholder="Birthday">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Status:&nbsp;&nbsp;</label>
+                                                    @{
+                                                        if (Model != null && Model.Status == true)
+                                                        {
+                                                            <label>Active</label>
+                                                            <input id="active" name="status" value="True" checked type="radio">
+                                                            <label>&nbsp;&nbsp;</label>
+                                                            <label>In-Active</label>
+                                                            <input id="in-active" name="status" value="False" type="radio">
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <label>Active</label>
+                                                            <input id="active" name="status" value="True" type="radio">
+                                                            <label>&nbsp;&nbsp;</label>
+                                                            <label>In-Active</label>
+                                                            <input id="in-active" name="status" value="False" checked type="radio">
+                                                        }
+                                                    }
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Gender:&nbsp;&nbsp;</label>
+
+                                                    @{
+                                                        if (Model != null && Model.Gender == "MALE")
+                                                        {
+                                                            <label>Male</label>
+                                                            <input id="male" name="gender" value="MALE" checked type="radio">
+                                                            <label>&nbsp;&nbsp;</label>
+                                                            <label>Female</label>
+                                                            <input id="female" name="gender" value="FEMALE" type="radio">
+                                                        }
+                                                        else
+                                                        {
+                                                            <label>Male</label>
+                                                            <input id="male" name="gender" value="MALE" type="radio">
+                                                            <label>&nbsp;&nbsp;</label>
+                                                            <label>Female</label>
+                                                            <input id="female" name="gender" value="FEMALE" checked type="radio">
+                                                        }
+                                                    }
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Phone Number:</label><br>
+                                                    <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Phone number">
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-info">Submit</button>
+                                                    <button type="button" class="btn btn-danger" id="btnCancel">Cancel</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /.content -->
+            </div>
+        </div>
+    </section>
+</div>
+<!-- /.content-wrapper -->
+
+<div class="clearfix">
+</div>
+
+@section Scripts {
+
+    <script src="~/Asset/Common/Client/Scripts/account.js"></script>
+
+    @*<script>
+            $("#Browse").click(function () {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (fileUrl) {
+                    //lấy file ảnh cuối cùng
+                    // fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+                    // $("#Picture").val(fileUrl);
+
+                    $("#avatar").val(fileUrl);
+                    $('#Picture').attr('src', fileUrl);
+                };
+                finder.popup();
+            });
+        </script>*@
+}

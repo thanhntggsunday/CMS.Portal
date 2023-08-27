@@ -1,0 +1,32 @@
+﻿@model Common.ViewModel.Common.ApiResult<eLearning.Common.Dto.ContentDto>
+
+@{
+    
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+
+
+
+<div class="content-top">
+
+    <div class="single">
+        <div class="">
+            @*<img src="@Model.ResultObj.Image" class="img-responsive" alt="">*@
+
+            <dd>
+                @Html.TextAreaFor(model => model.ResultObj.Detail, htmlAttributes: new { id = "Detail" })
+            </dd>
+
+            <script language="JavaScript">
+                var value = jQuery("#Detail").val();
+                jQuery("#Detail").remove();
+                document.write(value);
+
+            </script>
+
+
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+</div>

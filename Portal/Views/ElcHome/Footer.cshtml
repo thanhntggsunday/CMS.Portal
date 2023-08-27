@@ -1,0 +1,27 @@
+﻿@model Common.ViewModel.Common.ApiResult<Common.DTO.DTO.FooterDto>
+@{
+
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+@{
+    Layout = null;
+}
+
+<div class="footer">
+    <dd>
+        @Html.TextAreaFor(model => model.ResultObj.Content, htmlAttributes: new { id = "Content" })
+    </dd>
+
+    <script language="JavaScript">
+        var value = jQuery("#Content").val();
+        jQuery("#Content").remove();
+        document.write(value);
+
+    </script>
+
+
+    <div class="clearfix"> </div>
+
+</div>
+
+

@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <span class="hidden-xs">
+        @User.Identity.GetUserName()
+    </span>
+}
+else
+{
+
+}

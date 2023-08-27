@@ -1,0 +1,47 @@
+﻿@model Common.ViewModel.Common.ListViewModel<eLearning.Common.Dto.ContentDto>
+@using PagedList.Mvc;
+@using System.Linq;
+
+@{
+
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<div class="blog-content">
+    <div class="">
+        <div class="blog-articals">
+
+            @foreach (var item in Model.Data)
+            {
+                <div class="blog-artical">
+
+                    <div class="blog-artical-info">
+                        <div class="blog-artical-info-img">
+                            <a href="/ElcContent/Detail/@item.Id"><img style="height: 500px;" src="@item.Image" title="post-name"></a>
+                        </div>
+                        <div class="blog-artical-info-head">
+                            <h2><a href="/ElcContent/Detail/@item.Id">@item.ContentName</a></h2>
+                            <h6>Posted on, @item.CreatedDate by <a href="#"> @item.CreatedBy</a></h6>
+                        </div>
+                        <div class="blog-artical-info-text">
+                            <p>@item.Description<a href="#">[...]</a></p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="clearfix"> </div>
+</div>
+
+Page @(Model.Data.PageCount < Model.Data.PageNumber ? 0 : Model.Data.PageNumber) of @Model.Data.PageCount
+
+@Html.PagedListPager(Model.Data, page => Url.Action("SearchContentByName", new { ViewBag.name, page }))

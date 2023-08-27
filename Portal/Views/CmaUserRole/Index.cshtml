@@ -1,0 +1,161 @@
+﻿@model Common.ViewModel.System.AppUserViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Asset/Common/Admin/Libraries/Drop-Down-Combo-Tree/style.css" rel="stylesheet" />
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            User-Role Manage
+            @*<small>Control panel</small>*@
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">User-Role</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div id="div-btn-add-emp" class="col-sm-12 col-md-1 col-lg-1" float-left
+                     style="padding-bottom: 20px;float: right; display:flex; justify-content:flex-end;">
+                    <button type="button" id="btnAssignRole" class="btn w-100 btn-info" style="float: right;">
+                        <i class="fa fa-fw fa-plus"></i>
+                        <b>Assign</b>
+                    </button>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="box">
+
+                        <!-- /.card-header -->
+                        <div class="box-body">
+                            <table id="tbl_user_role" class="table table-bordered table-striped" width="100%"></table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        <!-- /.container-fluid -->
+        <!-- /.container-fluid -->
+        <!-- /.row -->
+        <!-- Main row -->
+        <!-- /.row (main row) -->
+
+
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<!-- Modal -->
+
+
+<form id="formUserRole" action="" novalidate  style="display: none">
+    <div class="">
+        <!-- <p>One fine body&hellip;</p> -->
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="col-md-12">
+                            <label value="000" id="edit-flag"></label>
+
+                            <div class="form-group">
+                                <label>
+                                    Users
+                                </label>
+
+                                <div class="row">
+
+                                    <div class="col-lg-6" id="div-members">
+
+                                        <input type="text" id="members-id" class="col-md-12" placeholder="Select" />
+                                    </div>
+                                    <!-- </div> -->
+                                    <div class="col-md-12">
+
+
+                                        <span id="msg-member"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+
+                            <!-- /.form-group -->
+                            <div class="form-group">
+                                <label>
+                                    Roles
+                                </label>
+
+                                <div class="row">
+
+
+                                    <div class="col-sm-12">
+
+                                        <!-- <div id="roles"></div> -->
+
+                                        <table id="roles-assign" style="width:100%"></table>
+                                        <span id="msg-role"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- </form> -->
+        </div>
+    </div>
+    <!-- /.tab-content -->
+    <!-- /.card-body -->
+
+    <div class="clearfix"></div>
+
+   
+
+
+</form>
+
+
+
+@section Scripts{
+    <script src="~/Asset/Common/Admin/Libraries/Drop-Down-Combo-Tree/icontains.js"></script>
+    <script src="~/Asset/Common/Admin/Libraries/Drop-Down-Combo-Tree/comboTreePlugin.js"></script>
+    <script src="~/Asset/Common/Admin/Script/user_role.js"></script>
+    <script src="~/Asset/Common/Admin/Script/assign_user_role.js"></script>
+
+}
+
+
+

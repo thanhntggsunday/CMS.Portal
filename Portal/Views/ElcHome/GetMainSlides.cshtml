@@ -1,0 +1,39 @@
+﻿
+@model Common.ViewModel.Common.DataTableViewModel<eLearning.Common.Dto.SlideDto>
+@{
+
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+@{
+    ViewBag.Title = "";
+    Layout = null;
+}
+
+<div class="banner">
+    <div class="header-slider">
+        <div class="slider" style="height: 400px;">
+            <div class="callbacks_container">
+                <ul class="rslides" id="slider">
+
+
+                    @foreach (var item in Model.data)
+                    {
+                        <li>
+                            <img style="height: 400px;" src="@item.Image" class="img-responsive" alt="">
+                            <div class="caption">
+                                @item.Description
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+

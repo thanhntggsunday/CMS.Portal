@@ -1,0 +1,18 @@
+﻿@model Common.ViewModel.Common.DataTableViewModel<eLearning.Common.Dto.CourseCategoryDto>
+@{
+
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+@{
+    ViewBag.Title = "ProductCategory";
+    Layout = null;
+}
+
+
+<div class="blo-top">
+
+    @foreach (var item in Model.data)
+    {
+        <li><a href="#">@item.Name</a></li>
+    }
+</div>

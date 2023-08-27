@@ -1,0 +1,20 @@
+﻿@model Common.ViewModel.Common.DataTableViewModel<eLearning.Common.Dto.ContentCategoryDto>
+@{
+
+    Layout = "~/Views/Shared/_ElcLayout.cshtml";
+}
+@{
+    ViewBag.Title = "ProductCategory";
+    Layout = null;
+}
+
+
+<div class="blo-top">
+
+    @foreach (var item in Model.data)
+    {
+        <li><a href="/ElcContent/GetContentByCategoryID?cateID=@item.ID">@item.Name</a></li>
+    }
+</div>
+
+
