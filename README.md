@@ -1,18 +1,4 @@
-# CMS.Portal
-    CMS.Portal
-
-    ASP.NET MVC 5
-    ASP.NET Web API
-    Entity Framework 6
-    ASP.NET Identity
-    Dapper
-    jQuery
-    Handlebarsjs
-    boostrap
-    SQL
-    Log4Net
-    OWIN
-
+# CMS.Portal   
     ASP.NET MVC 5
     Entity Framework 6
     ASP.NET Identity
